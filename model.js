@@ -1,8 +1,17 @@
 function Bundle() {
   this.execute = function () {
-    // Action executed successfully - status 0
-    print("Hello armada!");
-    return 0;
+    var Runtime = Java.type('java.lang.Runtime');
+    var File = Java.type('java.io.File');
+    var command = "python " + getProperty('bundle.system.path')
+        + '/' + getProperty('bundle.product.name')
+        + '-' + getProperty('armada.py.main.file');
+    print("> " + command);
+    var workDir = getProperty('armada.py.work.dir');
+    print(" > " + workDir);
+    Runtime.getRuntime().exec(
+          command,
+          [],
+          new File(workDir));
   };
   this.validate = function () {
     // Validation executed successfully - status 0

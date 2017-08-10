@@ -2,7 +2,7 @@ function Bundle() {
   this.execute = function () {
     var Runtime = Java.type('java.lang.Runtime');
     var File = Java.type('java.io.File');
-    var command = "python " + getProperty('bundle.system.path')
+    var command = "python " + getProperty('bundle.system.path');
         + '/' + getProperty('bundle.product.name')
         + '-' + getProperty('armada.py.main.file');
     print("> " + command);
@@ -12,6 +12,7 @@ function Bundle() {
           command,
           [],
           new File(workDir));
+    return 0;
   };
   this.validate = function () {
     // Validation executed successfully - status 0

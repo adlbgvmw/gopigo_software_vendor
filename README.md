@@ -1,4 +1,4 @@
 Instructions
 -----
 
-ECU - version 3, model 1, functionality:4x4
+ECU - version 3, model 1, functionality:4x4, object avoidance added
